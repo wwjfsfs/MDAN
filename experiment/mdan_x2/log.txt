@@ -1,0 +1,685 @@
+MDAN(
+  (sub_mean): MeanShift(3, 3, kernel_size=(1, 1), stride=(1, 1))
+  (up_bic): Upsample(scale_factor=4.0, mode=bicubic)
+  (upsample): Upsample(scale_factor=2.0, mode=bicubic)
+  (conv_first): Conv2d(3, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (BS1): MMFB(
+    (bs1): MIRB1(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs11): MIRB1(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs2): MIRB2(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs22): MIRB2(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs3): MIRB3(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs33): MIRB3(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+  )
+  (BS2): MMFB(
+    (bs1): MIRB1(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs11): MIRB1(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs2): MIRB2(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs22): MIRB2(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs3): MIRB3(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs33): MIRB3(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+  )
+  (BS3): MMFB(
+    (bs1): MIRB1(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs11): MIRB1(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs2): MIRB2(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs22): MIRB2(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs3): MIRB3(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+    (bs33): MIRB3(
+      (conv3_1): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_1): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_2): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_2): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv3_3): ConvBlock(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (convd_3): ConvBlockD(
+        (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+        (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(3, 3), dilation=(3, 3), groups=48)
+        (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (conv_last): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+    )
+  )
+  (upb1): MDAB(
+    (tail1): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+    (tail2): ConvBlock(
+      (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+      (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+      (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+    (conv3): ConvBlock(
+      (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+      (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+      (point_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (soft_c): Softmax()
+    (soft_hw): Softmax()
+    (conv_end): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+  )
+  (upb2): MDAB(
+    (tail1): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+    (tail2): ConvBlock(
+      (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+      (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+      (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+    (conv3): ConvBlock(
+      (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+      (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+      (point_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (soft_c): Softmax()
+    (soft_hw): Softmax()
+    (conv_end): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+  )
+  (upb3): MDAB(
+    (tail1): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+    (tail2): ConvBlock(
+      (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+      (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+      (point_conv): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+    (conv3): ConvBlock(
+      (group_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), groups=3)
+      (depth_conv): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+      (point_conv): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (soft_c): Softmax()
+    (soft_hw): Softmax()
+    (conv_end): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+  )
+  (scale1): Scale()
+  (scale2): Scale()
+  (scale3): Scale()
+  (conv_add): Conv2d(144, 48, kernel_size=(1, 1), stride=(1, 1))
+  (out): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (pixelshuffle): PixelShuffle(upscale_factor=4)
+  (lrelu): LeakyReLU(negative_slope=0.2, inplace)
+  (add_mean): MeanShift(3, 3, kernel_size=(1, 1), stride=(1, 1))
+)
+[Epoch 1]	Learning rate: 2.50e-3
+[1600/62100]	[L1: 9.2179]	28.3+0.6s

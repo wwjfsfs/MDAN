@@ -1,0 +1,66 @@
+2022-03-31-12:20:50
+
+debug: False
+template: .
+n_threads: 4
+cpu: False
+n_GPUs: 1
+seed: 1
+dir_data: /home/lss/workspace/EDSR-PyTorch-master/dataset
+dir_demo: ../test
+data_train: ['DIV2K']
+data_test: ['VAL']
+data_range: 1-3450
+ext: sep
+scale: [4]
+patch_size: 256
+rgb_range: 255
+n_colors: 3
+chop: False
+no_augment: False
+model: mdan
+act: lrelu
+pre_train: 
+extend: .
+n_resblocks: 16
+n_feats: 48
+res_scale: 1
+shift_mean: True
+dilation: False
+precision: single
+G0: 64
+RDNkSize: 3
+RDNconfig: B
+n_resgroups: 6
+reduction: 16
+reset: False
+test_every: 4000
+epochs: 1000
+batch_size: 16
+split_batch: 1
+self_ensemble: False
+test_only: False
+gan_k: 1
+lr: 0.0025
+decay: 158-358-558-758
+gamma: 0.5
+optimizer: ADAM
+momentum: 0.9
+betas: (0.9, 0.999)
+epsilon: 1e-08
+weight_decay: 0
+gclip: 0
+loss: 1*L1
+skip_threshold: 100000000.0
+save: mdan_x2
+load: 
+resume: 0
+save_models: False
+print_every: 100
+save_results: False
+save_gt: False
+r_mean: 0.4488
+g_mean: 0.4371
+b_mean: 0.404
+degradation: BI
+
